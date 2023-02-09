@@ -1,28 +1,22 @@
+/* generic styles */
 html {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
 html, body {
 	min-height: 100%;
-	background: #fff;
-	color: #000;
 }
-	/* sets the body height of the browser, so that backgrounds and div heights work correctly. Color and background will almost certainly be altered; they are just placeholders */
-	
 body {
 	font-size: 1rem;
 	text-rendering: optimizeLegibility;
 }
-	/* sets the base font size for the document; turns on kerning pairs and ligatures */
-	
+/* sets the base font size for the document; turns on kerning pairs and ligatures */
 body, ul, ol, dl {
 	margin: 0;
 }
-
 article, aside, audio, 
 footer, header, nav, section, video {
 	display: block; 
@@ -32,7 +26,7 @@ footer, header, nav, section, video {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
-	
+
 p { 
 	-ms-word-break: break-all;
 	word-break: break-all;
@@ -41,6 +35,8 @@ p {
 	-webkit-hyphens: auto;
 	-ms-hyphens: auto;
 	hyphens: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 } 
 	/* sets hyphenation by default on paragraphs */
 	
@@ -56,6 +52,7 @@ td {
 	/* causes tables to actually look like tables */
 	
 img { 
+  display: block;
 	border: none;
 	max-width: 100%;
 }
@@ -69,9 +66,11 @@ input[type="submit"]::-moz-focus-inner,
 	
 input[type="search"] { 
 	-webkit-appearance: textfield;
+  appearance: textfield;
 } 
 input[type="submit"] { 
 	-webkit-appearance:none;
+  appearance: none;
 }
 	/* removes the OS X appearance from HTML5 search inputs and submit buttons when viewed in Safari */
 	
@@ -96,8 +95,54 @@ input[type="email"]:invalid {
 	clear: left;
 }
 	/* allows a quick shortcut for floating elements left and right while avoiding the “float quirk” problem */
-	
 sub, sup { 
 	line-height: 0;
 }
-    /* sets superscript and subscript text so that it doesn't throw off leading for elements in which they are included */
+
+html[data-theme='light'] {
+    --bg: #f9f5d7;
+    --bg1: #ebdbb2;
+    --bg2: #d5c4a1;
+    --fg: #3c3836;
+    --red: #9d0006;
+    --green: #79740e;
+    --yellow: #B57614;
+    --blue: #076678;
+    --purple: #8f3f71;
+    --aqua: #427b58;
+    --orange: #af3a03;
+    --gray: #7c6f64;
+}
+
+html[data-theme='dark'] {
+    --bg: #282828;
+    --bg1: #3c3836;
+    --bg2: #504945;
+    --fg: #fbf1c7;
+    --red: #fb4934;
+    --green: #b8bb26;
+    --yellow: #fabd2f;
+    --blue: #83a598;
+    --purple: #d3869b;
+    --aqua: #8ec07c;
+    --orange: #fe8019;
+    --gray: #a89984;
+}
+
+main {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.flex {
+  display: flex;
+}
+
+.footer {
+  text-align: center;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: var(--fg);
+  border-top: 1px solid var(--fg);
+}
